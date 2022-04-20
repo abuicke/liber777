@@ -30,22 +30,40 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt_title" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/field_search"
+    <Spinner
+        android:id="@+id/dropdown_rows"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="50dp"
         android:layout_marginTop="30dp"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/rows"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_subtitle">
+        app:layout_constraintTop_toBottomOf="@id/txt_subtitle" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/search"
-            android:textSize="24sp" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <Spinner
+        android:id="@+id/dropdown_columns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="30dp"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/columns"
+        app:layout_constraintLeft_toLeftOf="@id/dropdown_rows"
+        app:layout_constraintRight_toRightOf="@id/dropdown_rows"
+        app:layout_constraintTop_toBottomOf="@id/dropdown_rows" />
+
+    <EditText
+        android:id="@+id/field_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="30dp"
+        android:hint="@string/search"
+        app:layout_constraintLeft_toLeftOf="@id/dropdown_columns"
+        app:layout_constraintRight_toRightOf="@id/dropdown_columns"
+        app:layout_constraintTop_toBottomOf="@id/dropdown_columns" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_search"

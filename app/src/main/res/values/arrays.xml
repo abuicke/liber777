@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="rows">
+        <item>Rows</item>
+        <item>0 - Ain/Ain Soph/Ain Soph Aur</item>
+        <item>1 - Kether</item>
+        <item>2 - Chokmah</item>
+        <item>3 - Binah</item>
+    </string-array>
+    <string-array name="columns">
+        <item>Columns</item>
+        <item>(I)   Key Scale</item>
+        <item>(II)  Hebrew Names of Numbers and Letters.</item>
+        <item>(III) English of Col. II.</item>
+        <item>(IV)  Consciousness of the Adept.</item>
+        <item>(V)   God-Names in Assiah.</item>
+        <item>(VI)  The Heavens of Assiah.</item>
+        <item>(VII) English of Col. VI.</item>
+    </string-array>
+</resources>
