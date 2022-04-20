@@ -23,7 +23,7 @@ class Liber777(context: Context) {
     }
 
     private fun loadJson(context: Context): JSONArray {
-        val jsonInputStream: InputStream = context.resources.openRawResource(R.raw.sevensevenseven)
+        val jsonInputStream: InputStream = context.resources.openRawResource(R.raw.liber777)
 
         val bytes = ByteArray(jsonInputStream.available())
         jsonInputStream.read(bytes, 0, bytes.size)
