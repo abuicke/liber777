@@ -14,13 +14,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: MainActivityBinding
     private lateinit var lookupView: LookupView
 
-    private val json: JSONArray = loadJson()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = MainActivityBinding.inflate(layoutInflater)
         lookupView = LookupView(this)
+
         setContentView(binding.root)
+
+        val json: JSONArray = loadJson()
 
         binding.dropdownRows.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
