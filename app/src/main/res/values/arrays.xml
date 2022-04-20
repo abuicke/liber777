@@ -6,6 +6,13 @@
         <item>1 - Kether</item>
         <item>2 - Chokmah</item>
         <item>3 - Binah</item>
+        <item>4 - Chesed</item>
+        <item>5 - Geburah</item>
+        <item>6 - Tiphareth</item>
+        <item>7 - Netzach</item>
+        <item>8 - Hod</item>
+        <item>9 - Yesod</item>
+        <item>10 - Malkuth</item>
     </string-array>
     <string-array name="columns">
         <item>Columns</item>
@@ -16,5 +23,6 @@
         <item>(V)   God-Names in Assiah.</item>
         <item>(VI)  The Heavens of Assiah.</item>
         <item>(VII) English of Col. VI.</item>
+        <item>(VIII) Orders of Qliphoth.</item>
     </string-array>
 </resources>

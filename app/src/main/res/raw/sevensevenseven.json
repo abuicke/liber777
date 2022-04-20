@@ -1,11 +1,16 @@
 [
   [
+    0,
     1,
     2,
     3,
     4,
     5,
-    6
+    6,
+    7,
+    8,
+    9,
+    10
   ],
   [
     [
@@ -13,38 +18,97 @@
       "Ain Soph",
       "Ain Soph Aur"
     ],
+    "Kether",
+    "Chokmah",
+    "Binah",
+    "Chesed",
+    "Geburah",
+    "Tiphareth",
+    "Netzach",
+    "Hod",
+    "Yesod",
+    "Malkuth"
+  ],
+  [
     [
       "Nothing",
       "No Limit",
       "Limitless L.V.X"
     ],
-    null,
-    null,
-    null,
-    null
-  ],
-  [
-    "Kether",
     "Crown",
-    null,
-    null,
-    "Rashith ha-Gilgalim",
-    "Sphere of Primum Mobile"
-  ],
-  [
-    "Chokmah",
     "Wisdom",
-    null,
-    null,
-    "Mazloth",
-    "Sphere of the Zodiac"
+    "Understanding",
+    "Mercy",
+    "Strength",
+    "Beauty",
+    "Victory",
+    "Splendour",
+    "Foundation",
+    "Kingdom"
   ],
   [
-    "Binah",
-    "Understanding",
-    null,
-    null,
+    "· · · · · · ·",
+    "הוא",
+    "هو الله الذی لا الله الا هو",
+    "هو الله الذی لا الله الا هو",
+    "هو الله الذی لا الله الا هو",
+    "هو الله الذی لا الله الا هو",
+    "هو الله الذی لا الله الا هو",
+    "هو الله الذی لا الله الا هو",
+    "هو الله الذی لا الله الا هو",
+    "هو الله الذی لا الله الا هو",
+    "هو الله الذی لا الله الا هو"
+  ],
+  [
+    "· · · · · · ·",
+    "[INSERT HEBREW]",
+    "[INSERT HEBREW]",
+    "[INSERT HEBREW]",
+    "[INSERT HEBREW]",
+    "[INSERT HEBREW]",
+    "[INSERT HEBREW]",
+    "[INSERT HEBREW]",
+    "[INSERT HEBREW]",
+    "[INSERT HEBREW]",
+    "[INSERT HEBREW]"
+  ],
+  [
+    "· · · · · · ·",
+    "Rashith ha-Gilgalim",
+    "Mazloth",
     "Shabbathai",
-    "Sphere of Saturn"
+    "Tzedeq",
+    "Madim",
+    "Shemesh",
+    "Nogah",
+    "Kokab",
+    "Levanah",
+    "Cholem Yesodoth"
+  ],
+  [
+    "· · · · · · ·",
+    "Sphere of Primum Mobile",
+    "Sphere of the Zodiac",
+    "Sphere of Saturn",
+    "Sphere of Jupiter",
+    "Sphere of Mars",
+    "Sphere of Sol",
+    "Sphere of Venus",
+    "Sphere of Mercury",
+    "Sphere of Luna",
+    "Sphere of the Elements"
+  ],
+  [
+    "· · · · · · ·",
+    "Thaumiel",
+    "Ghagiel",
+    "Satariel",
+    "Gha’agsheklah",
+    "Golachab",
+    "Thagiriron",
+    "A’arab Zaraq",
+    "Samael",
+    "Gamaliel",
+    "Lilith"
   ]
 ]
