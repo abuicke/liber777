@@ -10,7 +10,7 @@
         android:id="@+id/txt_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/aclonica"
         android:text="@string/_777"
         android:textSize="80sp"
