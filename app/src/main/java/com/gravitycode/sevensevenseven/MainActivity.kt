@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        val json: JSONArray = loadJson()
+        val liber777 = Liber777(this)
 
         binding.dropdownRows.onItemSelectedListener = OnItemSelectedListener { text ->
             toastShort(text)
@@ -31,15 +31,5 @@ class MainActivity : AppCompatActivity() {
         binding.dropdownColumns.onItemSelectedListener = OnItemSelectedListener { text ->
             toastShort(text)
         }
-    }
-
-    private fun loadJson(): JSONArray {
-        val jsonInputStream: InputStream = resources.openRawResource(R.raw.sevensevenseven)
-
-        val bytes = ByteArray(jsonInputStream.available())
-        jsonInputStream.read(bytes, 0, bytes.size)
-
-        val jsonString = String(bytes)
-        return JSONArray(jsonString)
     }
 }
