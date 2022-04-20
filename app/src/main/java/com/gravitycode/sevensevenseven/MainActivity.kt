@@ -24,26 +24,12 @@ class MainActivity : AppCompatActivity() {
 
         val json: JSONArray = loadJson()
 
-        binding.dropdownRows.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                toastShort(parent!!.getItemAtPosition(position).toString())
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
-            }
-
+        binding.dropdownRows.onItemSelectedListener = OnItemSelectedListener { text ->
+            toastShort(text)
         }
 
-        binding.dropdownColumns.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                toastShort(parent!!.getItemAtPosition(position).toString())
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
-            }
-
+        binding.dropdownColumns.onItemSelectedListener = OnItemSelectedListener { text ->
+            toastShort(text)
         }
     }
 
