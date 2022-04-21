@@ -2,12 +2,9 @@ package com.gravitycode.sevensevenseven
 
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.AdapterView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.gravitycode.sevensevenseven.databinding.MainActivityBinding
-import org.json.JSONArray
-import java.io.InputStream
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,12 +21,26 @@ class MainActivity : AppCompatActivity() {
 
         val liber777 = Liber777(this)
 
-        binding.dropdownRows.onItemSelectedListener = OnItemSelectedListener { text ->
-            toastShort(text)
+        binding.dropdownRows.onItemSelectedListener = OnItemSelectedListener { text, position ->
+            if (position > 0) {
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle(text)
+                builder.setItems(liber777.getRow(position - 1).map()) { dialog, which ->
+                    // TODO: Open LookupView here
+                }
+                builder.show()
+            }
         }
 
-        binding.dropdownColumns.onItemSelectedListener = OnItemSelectedListener { text ->
-            toastShort(text)
+        binding.dropdownColumns.onItemSelectedListener = OnItemSelectedListener { text, position ->
+            if (position > 0) {
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle(text)
+                builder.setItems(liber777.getColumn(position - 1).map()) { dialog, which ->
+                    // TODO: Open LookupView here
+                }
+                builder.show()
+            }
         }
     }
 }

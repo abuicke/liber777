@@ -37,26 +37,32 @@ class Liber777(context: Context) {
         for (col in 0 until jsonArray.length()) {
             val column = jsonArray.get(col) as JSONArray
             for (row in 0 until column.length()) {
-                if (column.isNull(row)) {
+                if (newJsonArray.isNull(row)) {
                     newJsonArray.put(row, JSONArray())
                 }
 
-//                (column.get(row) as JSONArray).put()
-
-                Log.i("mojo", "get row $row in column $col ${column.get(row)}")
+                newJsonArray.getJSONArray(row).put(column.get(row))
             }
         }
         return newJsonArray
     }
 
-    fun getRow(@IntRange(from = 0, to = MAX_ROWS) index: Int): String {
-        Preconditions.checkArgument(index in 0..MAX_ROWS)
-        return rows[index].toString()
+    fun getRow(@IntRange(from = 0, to = MAX_ROWS) index: Int): JSONArray {
+        Preconditions.checkArgument(index in 0..MAX_ROWS, index)
+        return rows.getJSONArray(index)
     }
 
-    fun getColumn(@IntRange(from = 0, to = MAX_COLUMNS) index: Int): String {
-        Preconditions.checkArgument(index in 0..MAX_COLUMNS)
-        return columns[index].toString()
+    fun getColumn(@IntRange(from = 0, to = MAX_COLUMNS) index: Int): JSONArray {
+        Preconditions.checkArgument(index in 0..MAX_COLUMNS, index)
+        return columns.getJSONArray(index)
     }
 
+    fun get(
+        @IntRange(from = 0, to = MAX_COLUMNS) col: Int,
+        @IntRange(from = 0, to = MAX_ROWS) row: Int
+    ): String {
+        Preconditions.checkArgument(col in 0..MAX_COLUMNS, col)
+        Preconditions.checkArgument(row in 0..MAX_ROWS, row)
+        return columns.get(row).toString()
+    }
 }
