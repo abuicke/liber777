@@ -17,10 +17,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val liber777 = Liber777(this)
+        var columnNames: Array<String> = resources.getStringArray(R.array.columns)
+        columnNames = columnNames.sliceArray(IntRange(1, columnNames.size - 1))
 
         binding.dropdownRows.onItemSelectedListener = OnItemSelectedListener { text, position ->
             if (position > 0) {
-                show(text, liber777.getRow(position - 1)) {
+                show(text, liber777.getRow(position - 1).map().zip(columnNames.asIterable()) { s1, s2 ->
+                    "$s2: $s1"
+                }) {
                     // show()
                 }
             }
@@ -28,17 +32,21 @@ class MainActivity : AppCompatActivity() {
 
         binding.dropdownColumns.onItemSelectedListener = OnItemSelectedListener { text, position ->
             if (position > 0) {
-                show(text, liber777.getColumn(position - 1)) {
+                show(text, liber777.getColumn(position - 1).map()) {
                     // show()
                 }
             }
         }
     }
 
-    private fun show(title: String, jsonArray: JSONArray, onClick: (Int) -> Unit) {
+    override fun onBackPressed() {
+        setContentView(binding.root)
+    }
+
+    private fun show(title: String, items: Array<String>, onClick: (Int) -> Unit) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(title)
-        builder.setItems(jsonArray.map()) { _, which ->
+        builder.setItems(items) { _, which ->
             onClick(which)
         }
         builder.show()

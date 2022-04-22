@@ -11,3 +11,14 @@ fun JSONArray.map(): Array<String> {
 
     return arrayList.toTypedArray()
 }
+
+fun Array<String>.zip(iterable: Iterable<String>, transform: (String, String) -> String): Array<String> {
+    val newArray = ArrayList<String>(size)
+    val thisIter = iterator()
+    val thatIter = iterable.iterator()
+    while (thisIter.hasNext() && thatIter.hasNext()) {
+        newArray.add(transform(thisIter.next(), thatIter.next()))
+    }
+
+    return newArray.toTypedArray()
+}
