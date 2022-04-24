@@ -1,4 +1,4 @@
-package com.gravitycode.sevensevenseven
+package com.gravitycode.sevensevenseven.ui
 
 import android.view.View
 

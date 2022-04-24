@@ -4,11 +4,11 @@ import android.view.View
 import android.widget.AdapterView
 
 class OnItemSelectedListener(
-    private val onItemSelected: (String, Int) -> Unit
+    private val onItemSelected: (Int) -> Unit
 ) : AdapterView.OnItemSelectedListener {
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        onItemSelected(parent!!.getItemAtPosition(position).toString(), position)
+        onItemSelected(position)
     }
 
     override fun onNothingSelected(parent: AdapterView<*>?) = Unit

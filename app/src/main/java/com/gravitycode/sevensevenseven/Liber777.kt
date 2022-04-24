@@ -1,12 +1,16 @@
 package com.gravitycode.sevensevenseven
 
 import android.content.Context
-import android.util.Log
 import androidx.annotation.IntRange
+import com.google.common.base.Optional
 import com.google.common.base.Preconditions
+import com.gravitycode.sevensevenseven.util.contains
 import org.json.JSONArray
 import java.io.InputStream
 
+/**
+ * TODO: Should be singleton
+ * */
 class Liber777(context: Context) {
 
     companion object {
@@ -64,5 +68,16 @@ class Liber777(context: Context) {
         Preconditions.checkArgument(col in 0..MAX_COLUMNS, col)
         Preconditions.checkArgument(row in 0..MAX_ROWS, row)
         return columns.get(row).toString()
+    }
+
+    fun findRowContaining(str: String): Optional<Int> {
+        for (i in 0 until rows.length()) {
+            val column = rows.getJSONArray(i)
+            if (column.contains(str)) {
+                return Optional.of(i)
+            }
+        }
+
+        return Optional.absent()
     }
 }

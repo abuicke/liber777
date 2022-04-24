@@ -1,51 +1,84 @@
 package com.gravitycode.sevensevenseven
 
 import android.os.Bundle
-import androidx.appcompat.app.AlertDialog
+import android.util.Log
+import android.widget.TextView
+import androidx.annotation.IntRange
 import androidx.appcompat.app.AppCompatActivity
+import com.google.common.base.Optional
+import com.google.common.base.Preconditions
+import com.gravitycode.sevensevenseven.ui.ColumnScreen
+import com.gravitycode.sevensevenseven.ui.HomeScreen
+import com.gravitycode.sevensevenseven.ui.RowScreen
+import com.gravitycode.sevensevenseven.ui.Screen
+import com.gravitycode.sevensevenseven.util.toastLong
 
+@Suppress("MemberVisibilityCanBePrivate")
 class MainActivity : AppCompatActivity() {
 
     private lateinit var homeScreen: HomeScreen
+    private lateinit var rowScreen: RowScreen
+    private lateinit var columnScreen: ColumnScreen
+
+    private lateinit var liber777: Liber777
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        liber777 = Liber777(this)
         homeScreen = HomeScreen(layoutInflater)
-        setContentView(homeScreen.contentView)
+        rowScreen = RowScreen(layoutInflater)
+        columnScreen = ColumnScreen(layoutInflater)
+        setContentView(homeScreen)
 
-        val liber777 = Liber777(this)
-        var columnNames: Array<String> = resources.getStringArray(R.array.columns)
-        columnNames = columnNames.sliceArray(IntRange(1, columnNames.size - 1))
+        for (col in 0 until 8) {
+            Log.i("col $col", liber777.getColumn(col).toString())
+        }
 
-        homeScreen.dropdownRows.onItemSelectedListener = OnItemSelectedListener { text, position ->
+        for (row in 0 until 8) {
+            Log.i("row $row", liber777.getRow(row).toString())
+        }
+
+        homeScreen.dropdownRows.onItemSelectedListener = OnItemSelectedListener { position ->
             if (position > 0) {
-                show(text, liber777.getRow(position - 1).map().zip(columnNames.asIterable()) { s1, s2 ->
-                    "$s2: $s1"
-                }) {
-                    // show()
-                }
+                displayRow(position - 1)
             }
         }
 
-        homeScreen.dropdownColumns.onItemSelectedListener = OnItemSelectedListener { text, position ->
+        homeScreen.dropdownColumns.onItemSelectedListener = OnItemSelectedListener { position ->
             if (position > 0) {
-                show(text, liber777.getColumn(position - 1).map()) {
-                    // show()
-                }
+                displayColumn(position - 1)
             }
         }
+
+        homeScreen.onSearchEvent = { searchQuery ->
+            val result: Optional<Int> = liber777.findRowContaining(searchQuery)
+            if (result.isPresent) {
+                displayRow(result.get())
+            } else {
+                toastLong("$searchQuery not found")
+            }
+        }
+    }
+
+    fun setContentView(screen: Screen) {
+        super.setContentView(screen.contentView)
     }
 
     override fun onBackPressed() {
         setContentView(homeScreen.contentView)
     }
 
-    private fun show(title: String, items: Array<String>, onClick: (Int) -> Unit) {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle(title)
-        builder.setItems(items) { _, which ->
-            onClick(which)
-        }
-        builder.show()
+    fun displayRow(@IntRange(from = 0, to = Liber777.MAX_ROWS) index: Int) {
+        Preconditions.checkArgument(index in 0..Liber777.MAX_ROWS, index)
+        rowScreen.contentView.findViewById<TextView>(R.id.text).text =
+            liber777.getRow(index).toString()
+        setContentView(rowScreen)
+    }
+
+    fun displayColumn(@IntRange(from = 0, to = Liber777.MAX_COLUMNS) index: Int) {
+        Preconditions.checkArgument(index in 0..Liber777.MAX_COLUMNS, index)
+        columnScreen.contentView.findViewById<TextView>(R.id.text).text =
+            liber777.getColumn(index).toString()
+        setContentView(columnScreen)
     }
 }

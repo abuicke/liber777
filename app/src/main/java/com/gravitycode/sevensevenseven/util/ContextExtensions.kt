@@ -1,4 +1,4 @@
-package com.gravitycode.sevensevenseven
+package com.gravitycode.sevensevenseven.util
 
 import android.content.Context
 import android.widget.Toast
