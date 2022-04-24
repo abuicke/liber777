@@ -1,7 +1,6 @@
 package com.gravitycode.sevensevenseven
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
 import androidx.annotation.IntRange
 import androidx.appcompat.app.AppCompatActivity
@@ -28,7 +27,8 @@ class MainActivity : AppCompatActivity() {
         homeScreen = HomeScreen(layoutInflater)
         rowScreen = RowScreen(layoutInflater)
         columnScreen = ColumnScreen(layoutInflater)
-        setContentView(homeScreen)
+//        setContentView(homeScreen)
+        displayRow(2)
 
         homeScreen.dropdownRows.onItemSelectedListener = OnItemSelectedListener { position ->
             if (position > 0) {
@@ -62,8 +62,14 @@ class MainActivity : AppCompatActivity() {
 
     fun displayRow(@IntRange(from = 0, to = Liber777.MAX_ROWS) index: Int) {
         Preconditions.checkArgument(index in 0..Liber777.MAX_ROWS, index)
-        rowScreen.contentView.findViewById<TextView>(R.id.text).text =
-            liber777.getRow(index).toString()
+
+        val row = liber777.getRow(index)
+        rowScreen.textKey.text = row.getString(0)
+        rowScreen.textHebrewNames.text = row.getString(1)
+        rowScreen.textEnglishOfColII.text = row.getString(2)
+        rowScreen.textConsciousnessOfTheAdept.text = row.getString(3)
+        rowScreen.textGodNamesInAssiah.text = row.getString(4)
+
         setContentView(rowScreen)
     }
 
