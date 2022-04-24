@@ -30,14 +30,6 @@ class MainActivity : AppCompatActivity() {
         columnScreen = ColumnScreen(layoutInflater)
         setContentView(homeScreen)
 
-        for (col in 0 until 8) {
-            Log.i("col $col", liber777.getColumn(col).toString())
-        }
-
-        for (row in 0 until 8) {
-            Log.i("row $row", liber777.getRow(row).toString())
-        }
-
         homeScreen.dropdownRows.onItemSelectedListener = OnItemSelectedListener { position ->
             if (position > 0) {
                 displayRow(position - 1)
