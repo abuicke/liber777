@@ -16,6 +16,17 @@ class Liber777(context: Context) {
     companion object {
         const val MAX_ROWS = 35L
         const val MAX_COLUMNS = 52L
+
+        val COLUMN_NAMES = arrayOf(
+            "Key Scale",
+            "Hebrew Names of Numbers and Letters",
+            "English of Col. II",
+            "Consciousness of the Adept",
+            "God-Names in Assiah",
+            "The Heavens of Assiah",
+            "English of Col. VI",
+            "Orders of Qliphoth"
+        )
     }
 
     private val columns: JSONArray

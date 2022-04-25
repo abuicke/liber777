@@ -5,33 +5,46 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
-import android.widget.ScrollView
 import android.widget.TextView
-import androidx.core.view.children
-import androidx.core.view.get
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.gravitycode.sevensevenseven.Liber777
 import com.gravitycode.sevensevenseven.R
+import org.json.JSONArray
 
-class RowScreen(inflater: LayoutInflater) : Screen {
-
-    private companion object {
-        private const val TEXT_VIEW_TAG = "text"
-    }
+class RowScreen(context: Context, private val inflater: LayoutInflater) : Screen {
 
     @SuppressLint("InflateParams")
     override val contentView: View = inflater.inflate(R.layout.row_screen, null, false)
+    private val recyclerView: RecyclerView = contentView.findViewById(R.id.recycler_view)
 
-    val rows: List<TextView> = findRows()
-
-    private fun findRows(): List<TextView> {
-        val rowsViewGroup: ViewGroup = contentView.findViewById(R.id.rows)
-        val list = ArrayList<TextView>(rowsViewGroup.childCount / 4)
-        rowsViewGroup.children.iterator().forEach { child ->
-            if (child.tag == TEXT_VIEW_TAG) {
-                list.add(child as TextView)
-            }
-        }
-
-        return list
+    init {
+        recyclerView.layoutManager = LinearLayoutManager(context)
     }
+
+    fun setRow(jsonArray: JSONArray) {
+        recyclerView.adapter = Adapter(inflater, jsonArray)
+    }
+}
+
+private class RowViewHolder(rowView: View) : RecyclerView.ViewHolder(rowView) {
+
+    val label: TextView = rowView.findViewById(R.id.label)
+    val text: TextView = rowView.findViewById(R.id.text)
+
+}
+
+private class Adapter(val inflater: LayoutInflater, val jsonArray: JSONArray) :
+    RecyclerView.Adapter<RowViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowViewHolder {
+        return RowViewHolder(inflater.inflate(R.layout.row, parent, false))
+    }
+
+    override fun onBindViewHolder(holder: RowViewHolder, position: Int) {
+        holder.label.text = Liber777.COLUMN_NAMES[position]
+        holder.text.text = jsonArray.getString(position)
+    }
+
+    override fun getItemCount(): Int = jsonArray.length()
 }

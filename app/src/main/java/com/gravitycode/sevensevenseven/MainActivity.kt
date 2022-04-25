@@ -1,6 +1,7 @@
 package com.gravitycode.sevensevenseven
 
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.annotation.IntRange
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,10 @@ import com.gravitycode.sevensevenseven.ui.RowScreen
 import com.gravitycode.sevensevenseven.ui.Screen
 import com.gravitycode.sevensevenseven.util.toastLong
 
+/**
+ * TODO: Getting `Cannot fit requested classes in a single dex file (# methods: 65696 > 65536)`
+ * when building for API 16 device
+ * */
 @Suppress("MemberVisibilityCanBePrivate")
 class MainActivity : AppCompatActivity() {
 
@@ -25,10 +30,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         liber777 = Liber777(this)
         homeScreen = HomeScreen(layoutInflater)
-        rowScreen = RowScreen(layoutInflater)
+        rowScreen = RowScreen(this, layoutInflater)
         columnScreen = ColumnScreen(layoutInflater)
-//        setContentView(homeScreen)
-        displayRow(2)
+        setContentView(homeScreen)
+//        displayRow(2)
 
         homeScreen.dropdownRows.onItemSelectedListener = OnItemSelectedListener { position ->
             if (position > 0) {
@@ -62,16 +67,8 @@ class MainActivity : AppCompatActivity() {
 
     fun displayRow(@IntRange(from = 0, to = Liber777.MAX_ROWS) index: Int) {
         Preconditions.checkArgument(index in 0..Liber777.MAX_ROWS, index)
-
         val row = liber777.getRow(index)
-
-        /**
-         * TODO: Enable constant
-         * */
-        for (i in 0 until 6) {//Liber777.MAX_COLUMNS.toInt()) {
-            rowScreen.rows[i].text = row.getString(i)
-        }
-
+        rowScreen.setRow(row)
         setContentView(rowScreen)
     }
 
