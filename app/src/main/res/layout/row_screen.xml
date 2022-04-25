@@ -190,7 +190,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:gravity="center"
-            android:text="@string/label_label_god_names_in_assiah"
+            android:text="@string/label_god_names_in_assiah"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@id/row_5_guideline"
             app:layout_constraintHorizontal_chainStyle="spread"
@@ -218,6 +218,49 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="500dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#A5A0A0"
+            app:layout_constraintBottom_toBottomOf="@id/row_5_guideline"
+            app:layout_constraintLeft_toLeftOf="@id/row_5_guideline"
+            app:layout_constraintRight_toRightOf="@id/row_5_guideline"
+            app:layout_constraintTop_toTopOf="@id/row_5_guideline" />
+
+        <TextView
+            android:id="@+id/label_the_heavens_of_assiah"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="@string/label_the_heavens_of_assiah"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/row_6_guideline"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="0.3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/text_the_heavens_of_assiah"
+            app:layout_constraintTop_toTopOf="@id/row_5_guideline" />
+
+        <TextView
+            android:id="@+id/text_the_heavens_of_assiah"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/row_6_guideline"
+            app:layout_constraintHorizontal_weight="0.7"
+            app:layout_constraintLeft_toRightOf="@id/label_the_heavens_of_assiah"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/row_5_guideline"
+            tools:text="Rashith ha-Gilgalim" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/row_6_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="600dp" />
 
         <View
             android:layout_width="match_parent"

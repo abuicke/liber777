@@ -69,6 +69,7 @@ class MainActivity : AppCompatActivity() {
         rowScreen.textEnglishOfColII.text = row.getString(2)
         rowScreen.textConsciousnessOfTheAdept.text = row.getString(3)
         rowScreen.textGodNamesInAssiah.text = row.getString(4)
+        rowScreen.textTheHeavensInAssiah.text = row.getString(5)
 
         setContentView(rowScreen)
     }

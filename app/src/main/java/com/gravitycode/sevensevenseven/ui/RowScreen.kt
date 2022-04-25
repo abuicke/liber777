@@ -16,4 +16,5 @@ class RowScreen(inflater: LayoutInflater) : Screen {
     val textEnglishOfColII: TextView = contentView.findViewById(R.id.text_english_of_col_II)
     val textConsciousnessOfTheAdept: TextView = contentView.findViewById(R.id.text_consciousness_of_the_adept)
     val textGodNamesInAssiah: TextView = contentView.findViewById(R.id.text_god_names_in_assiah)
+    val textTheHeavensInAssiah: TextView = contentView.findViewById(R.id.text_the_heavens_of_assiah)
 }
