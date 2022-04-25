@@ -64,12 +64,13 @@ class MainActivity : AppCompatActivity() {
         Preconditions.checkArgument(index in 0..Liber777.MAX_ROWS, index)
 
         val row = liber777.getRow(index)
-        rowScreen.textKey.text = row.getString(0)
-        rowScreen.textHebrewNames.text = row.getString(1)
-        rowScreen.textEnglishOfColII.text = row.getString(2)
-        rowScreen.textConsciousnessOfTheAdept.text = row.getString(3)
-        rowScreen.textGodNamesInAssiah.text = row.getString(4)
-        rowScreen.textTheHeavensInAssiah.text = row.getString(5)
+
+        /**
+         * TODO: Enable constant
+         * */
+        for (i in 0 until 6) {//Liber777.MAX_COLUMNS.toInt()) {
+            rowScreen.rows[i].text = row.getString(i)
+        }
 
         setContentView(rowScreen)
     }
