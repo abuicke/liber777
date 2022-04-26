@@ -13,16 +13,84 @@
         <item>8 - Hod</item>
         <item>9 - Yesod</item>
         <item>10 - Malkuth</item>
+        <item>11 - Aleph</item>
+        <item>12 - Beth</item>
+        <item>13 - Gimel</item>
+        <item>14 - Daleth</item>
+        <item>15 - Hé</item>
+        <item>16 - Vau</item>
+        <item>17 - Zain</item>
+        <item>18 - Cheth</item>
+        <item>19 - Teth</item>
+        <item>20 - Yod</item>
+        <item>21 - Kaph</item>
+        <item>22 - Lamed</item>
+        <item>23 - Maim</item>
+        <item>24 - Nun</item>
+        <item>25 - Samekh</item>
+        <item>26 - Ayin</item>
+        <item>27 - Pé</item>
+        <item>28 - Tzaddi</item>
+        <item>29 - Qoph</item>
+        <item>30 - Resh</item>
+        <item>31 - Shin</item>
+        <item>32 - Tau</item>
+        <item>32 bis - Tau</item>
+        <item>31 bis - Shin</item>
     </string-array>
     <string-array name="columns">
         <item>Columns</item>
         <item>(I)   Key Scale</item>
-        <item>(II)  Hebrew Names of Numbers and Letters.</item>
-        <item>(III) English of Col. II.</item>
-        <item>(IV)  Consciousness of the Adept.</item>
-        <item>(V)   God-Names in Assiah.</item>
-        <item>(VI)  The Heavens of Assiah.</item>
-        <item>(VII) English of Col. VI.</item>
-        <item>(VIII) Orders of Qliphoth.</item>
+        <item>(II)  Hebrew Names of Numbers and Letters</item>
+        <item>(III) English of Col. II</item>
+        <item>(IV)  Consciousness of the Adept</item>
+        <item>(V)   God-Names in Assiah</item>
+        <item>(VI)  The Heavens of Assiah</item>
+        <item>(VII) English of Col. VI</item>
+        <item>(VIII) Orders of Qliphoth</item>
+        <item>(VIII) The Sword and the Serpent</item>
+        <item>(VIII) Mystic Numbers of the Sephiroth</item>
+        <item>(VIII) Elements (with their Planetary Rulers).</item>
+        <item>(VIII) The Tree of Life</item>
+        <item>(VIII) The Paths of the Sepher Yetzirah</item>
+        <item>(VIII) General Attribution of Tarot</item>
+        <item>(VIII) The King Scale of Colour (י)</item>
+        <item>(VIII) The Queen Scale of Colour (ה)</item>
+        <item>(VIII) The Emperor Scale of Colour (ו)</item>
+        <item>(VIII) The Empress Scale of Colour (ה)</item>
+        <item>(VIII) Selection of Egyptian Gods</item>
+        <item>(VIII) Complete Practical Attribution of Egyptian Gods</item>
+        <item>(VIII) The Perfected Man</item>
+        <item>(VIII) Small selection of Hindu Deities</item>
+        <item>(VIII) The Forty Buddhist Meditations</item>
+        <item>(VIII) Certain of the Hindu and Buddhist Results</item>
+        <item>(XXV - XXXII) XXV - XXXII</item>
+        <item>(VIII) Some Scandinavian Gods</item>
+        <item>(VIII) Some Greek Gods</item>
+        <item>(VIII) Some Roman Gods</item>
+        <item>(VIII) Selection of Christian Gods (10); Apostles (12); Evangelists (4) and Churches of Asia (7)</item>
+        <item>(VIII) Hindu Legendary Demons</item>
+        <item>(VIII) Animals, Real and Imaginary</item>
+        <item>(VIII) Plants, Real and Imaginary</item>
+        <item>(VIII) Precious Stones</item>
+        <item>(VIII) Magical Weapons</item>
+        <item>(VIII) Magical Formulæ (see Col. XLI)</item>
+        <item>(VIII) Perfumes</item>
+        <item>(VIII) Vegetable Drugs</item>
+        <item>(VIII) Mineral Drugs</item>
+        <item>(VIII) Magical Powers [Western Mysticism]</item>
+        <item>(VIII) System of Taoism</item>
+        <item>(VIII) Kings and Princes of the Jinn</item>
+        <item>(VIII) Figures related to Pure Number</item>
+        <item>(VIII) Lineal Figures of the Planets, &amp;c.,and Geomany</item>
+        <item>(VIII) Transcendental Morality. [10 Virtues (1–10), 7 Sins (Planets), 4 Magick Powers (Elements).]</item>
+        <item>(VIII) The Coptic Alphabet</item>
+        <item>(VIII) Numeration of Col. LI.</item>
+        <item>(VIII) English equivalent of Col. LI</item>
+        <item>(VIII) The Arabic Alphabet</item>
+        <item>(VIII) Numeration of Arabic Alphabet</item>
+        <item>(VIII) The Greek Alphabet</item>
+        <item>(VIII) Numeration of Greek Alphabet</item>
+        <item>(VIII) Diseases (Typical)</item>
     </string-array>
 </resources>
