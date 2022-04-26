@@ -12,6 +12,9 @@ import com.gravitycode.sevensevenseven.Liber777
 import com.gravitycode.sevensevenseven.R
 import org.json.JSONArray
 
+/**
+ * TODO: Need row to grow to accommodate the text
+ * */
 class RowScreen(context: Context, private val inflater: LayoutInflater) : Screen {
 
     @SuppressLint("InflateParams")
