@@ -26,7 +26,7 @@ class RowScreen(context: Context, private val inflater: LayoutInflater) : Screen
     }
 
     fun setRow(jsonArray: JSONArray) {
-        recyclerView.adapter = Adapter(inflater, jsonArray)
+        recyclerView.adapter = RowAdapter(inflater, jsonArray)
     }
 }
 
@@ -37,7 +37,7 @@ private class RowViewHolder(rowView: View) : RecyclerView.ViewHolder(rowView) {
 
 }
 
-private class Adapter(val inflater: LayoutInflater, val jsonArray: JSONArray) :
+private class RowAdapter(val inflater: LayoutInflater, val jsonArray: JSONArray) :
     RecyclerView.Adapter<RowViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowViewHolder {
