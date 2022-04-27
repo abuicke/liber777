@@ -2,6 +2,7 @@ package com.gravitycode.sevensevenseven.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.icu.text.StringSearch
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gravitycode.sevensevenseven.Liber777
 import com.gravitycode.sevensevenseven.R
+import com.gravitycode.sevensevenseven.util.Strings
+import com.gravitycode.sevensevenseven.util.getString
 import org.json.JSONArray
 
 /**
@@ -46,7 +49,7 @@ private class RowAdapter(val inflater: LayoutInflater, val jsonArray: JSONArray)
 
     override fun onBindViewHolder(holder: RowViewHolder, position: Int) {
         holder.label.text = Liber777.COLUMN_NAMES[position]
-        holder.text.text = jsonArray.getString(position)
+        holder.text.text = jsonArray.getString(position, Strings.EMPTY)
     }
 
     override fun getItemCount(): Int = jsonArray.length()

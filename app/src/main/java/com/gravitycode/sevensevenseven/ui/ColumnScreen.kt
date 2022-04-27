@@ -2,14 +2,16 @@ package com.gravitycode.sevensevenseven.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.gravitycode.sevensevenseven.Liber777
 import com.gravitycode.sevensevenseven.R
+import com.gravitycode.sevensevenseven.util.Strings
+import com.gravitycode.sevensevenseven.util.getString
 import org.json.JSONArray
 
 class ColumnScreen(context: Context, private val inflater: LayoutInflater) : Screen {
@@ -42,7 +44,7 @@ private class ColumnAdapter(val inflater: LayoutInflater, val jsonArray: JSONArr
 
     override fun onBindViewHolder(holder: ColumnViewHolder, position: Int) {
         holder.label.text = position.toString()
-        holder.text.text = jsonArray.getString(position)
+        holder.text.text = jsonArray.getString(position, Strings.EMPTY)
     }
 
     override fun getItemCount(): Int = jsonArray.length()
