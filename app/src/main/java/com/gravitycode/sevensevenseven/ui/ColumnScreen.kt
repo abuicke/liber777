@@ -16,6 +16,11 @@ import org.json.JSONArray
 
 class ColumnScreen(context: Context, private val inflater: LayoutInflater) : Screen {
 
+    internal companion object {
+        const val ROW_33_NAME = "32 bis"
+        const val ROW_34_NAME = "31 bis"
+    }
+
     @SuppressLint("InflateParams")
     override val contentView: View = inflater.inflate(R.layout.column_screen, null, false)
     private val recyclerView: RecyclerView = contentView.findViewById(R.id.recycler_view)
@@ -43,7 +48,11 @@ private class ColumnAdapter(val inflater: LayoutInflater, val jsonArray: JSONArr
     }
 
     override fun onBindViewHolder(holder: ColumnViewHolder, position: Int) {
-        holder.label.text = position.toString()
+        holder.label.text = when (position) {
+            33 -> ColumnScreen.ROW_33_NAME
+            34 -> ColumnScreen.ROW_34_NAME
+            else -> position.toString()
+        }
         holder.text.text = jsonArray.getString(position, Strings.EMPTY)
     }
 
