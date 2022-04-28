@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/row"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="wrap_content"
     android:paddingStart="4dp"
     android:paddingLeft="4dp"
     android:paddingEnd="0dp"
@@ -14,7 +14,7 @@
     <TextView
         android:id="@+id/label"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="100dp"
         android:gravity="center"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,7 +28,9 @@
     <TextView
         android:id="@+id/text"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
         android:gravity="center"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
