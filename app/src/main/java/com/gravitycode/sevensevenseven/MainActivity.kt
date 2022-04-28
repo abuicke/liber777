@@ -17,6 +17,7 @@ import com.gravitycode.sevensevenseven.util.toastLong
  * TODO: Getting `Cannot fit requested classes in a single dex file (# methods: 65696 > 65536)`
  * when building for API 16 device
  * TODO: Landscape changed is broken
+ * TODO: Search doesn't cover multiple matches, e.g. "Shiva".
  * */
 @Suppress("MemberVisibilityCanBePrivate")
 class MainActivity : AppCompatActivity() {
