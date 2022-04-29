@@ -10,8 +10,8 @@ android {
         applicationId "com.gravitycode.sevensevenseven"
         minSdk 16
         targetSdk 31
-        versionCode 1
-        versionName "1.0-alpha"
+        versionCode 2
+        versionName "1.0-beta"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
