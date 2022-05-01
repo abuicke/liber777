@@ -19,6 +19,7 @@ import com.gravitycode.sevensevenseven.util.toastLong
  * TODO: Landscape changed is broken
  * TODO: Search doesn't cover multiple matches, e.g. "Shiva".
  * TODO: Add option to write JSON to local disk and read [Liber777] from there so the user can edit it.
+ * TODO: Use ImageView and \n to get multiline curly brace effect for lines such as [2, 0] and [23, 0]
  * */
 @Suppress("MemberVisibilityCanBePrivate")
 class MainActivity : AppCompatActivity() {
