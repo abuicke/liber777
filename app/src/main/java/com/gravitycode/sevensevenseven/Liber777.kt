@@ -2,9 +2,7 @@ package com.gravitycode.sevensevenseven
 
 import android.content.Context
 import androidx.annotation.IntRange
-import com.google.common.base.Optional
 import com.google.common.base.Preconditions
-import com.gravitycode.sevensevenseven.util.contains
 import org.json.JSONArray
 import java.io.InputStream
 
@@ -12,6 +10,8 @@ import java.io.InputStream
  * TODO: Should be singleton
  * */
 class Liber777(context: Context) {
+
+    class Item(val row: Int, val col: Int)
 
     companion object {
         const val MAX_ROWS = 35L
@@ -125,14 +125,26 @@ class Liber777(context: Context) {
         return columns.get(row).toString()
     }
 
-    fun findRowContaining(str: String): Optional<Int> {
-        for (i in 0 until rows.length()) {
-            val column = rows.getJSONArray(i)
-            if (column.contains(str)) {
-                return Optional.of(i)
+    fun find(searchStr: String, ignoreCase: Boolean): List<Item> {
+        // Make sure search term is standalone word or phrase
+        val searchPattern = "(^| )${searchStr.trim()}( |$)"
+        val regex = if (ignoreCase) {
+            Regex(searchPattern, RegexOption.IGNORE_CASE)
+        } else {
+            Regex(searchPattern)
+        }
+
+        val results = ArrayList<Item>(3)
+        for (i in 0 until columns.length()) {
+            val column = columns.getJSONArray(i)
+            for (j in 0 until column.length()) {
+                val item = column.getString(j)
+                if (item.contains(regex)) {
+                    results.add(Item(row = j, col = i))
+                }
             }
         }
 
-        return Optional.absent()
+        return results
     }
 }

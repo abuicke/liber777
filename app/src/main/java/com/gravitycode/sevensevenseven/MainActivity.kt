@@ -1,11 +1,9 @@
 package com.gravitycode.sevensevenseven
 
+import android.app.AlertDialog
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.TextView
 import androidx.annotation.IntRange
 import androidx.appcompat.app.AppCompatActivity
-import com.google.common.base.Optional
 import com.google.common.base.Preconditions
 import com.gravitycode.sevensevenseven.ui.ColumnScreen
 import com.gravitycode.sevensevenseven.ui.HomeScreen
@@ -19,7 +17,7 @@ import com.gravitycode.sevensevenseven.util.toastLong
  * TODO: Landscape changed is broken
  * TODO: Search doesn't cover multiple matches, e.g. "Shiva".
  * TODO: Add option to write JSON to local disk and read [Liber777] from there so the user can edit it.
- * TODO: Use ImageView and \n to get multiline curly brace effect for lines such as [2, 0] and [23, 0]
+ * TODO: Add path name to [ColumnScreen] labels
  * */
 @Suppress("MemberVisibilityCanBePrivate")
 class MainActivity : AppCompatActivity() {
@@ -51,11 +49,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         homeScreen.onSearchEvent = { searchQuery ->
-            val result: Optional<Int> = liber777.findRowContaining(searchQuery)
-            if (result.isPresent) {
-                displayRow(result.get())
-            } else {
-                toastLong("$searchQuery not found")
+            val result: List<Liber777.Item> = liber777.find(searchQuery, ignoreCase = true)
+            when (result.size) {
+                0 -> toastLong("$searchQuery not found")
+                1 -> displayRow(result[0].row)
+                else -> displaySearchResults(result)
             }
         }
     }
@@ -83,5 +81,17 @@ class MainActivity : AppCompatActivity() {
         columnScreen.setColumn(col)
         setContentView(columnScreen)
         supportActionBar!!.title = Liber777.COLUMN_NAMES[index]
+    }
+
+    private fun displaySearchResults(searchResults: List<Liber777.Item>) {
+        val formattedSearchResults: Array<String> = searchResults.map { result ->
+            "Row ${result.row} in ${Liber777.COLUMN_NAMES[result.col]}"
+        }.toTypedArray()
+
+        AlertDialog.Builder(this)
+            .setItems(formattedSearchResults) { _, which ->
+                displayRow(searchResults[which].row)
+            }
+            .show()
     }
 }
