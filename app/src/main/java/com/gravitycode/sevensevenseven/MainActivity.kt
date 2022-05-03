@@ -89,6 +89,7 @@ class MainActivity : AppCompatActivity() {
         }.toTypedArray()
 
         AlertDialog.Builder(this)
+            .setTitle("Multiple Results Found")
             .setItems(formattedSearchResults) { _, which ->
                 displayRow(searchResults[which].row)
             }
