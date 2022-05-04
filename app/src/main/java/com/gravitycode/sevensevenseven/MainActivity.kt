@@ -15,11 +15,10 @@ import com.gravitycode.sevensevenseven.util.toastLong
  * TODO: Getting `Cannot fit requested classes in a single dex file (# methods: 65696 > 65536)`
  * when building for API 16 device
  * TODO: Landscape changed is broken
- * TODO: Search doesn't cover multiple matches, e.g. "Shiva".
  * TODO: Add option to write JSON to local disk and read [Liber777] from there so the user can edit it.
  * TODO: Add path name to [ColumnScreen] labels
- * TODO: Fix Arabic charachters
- * TODO: Fix Greek charachters
+ * TODO: Fix Arabic characters
+ * TODO: Fix Greek characters
  * */
 @Suppress("MemberVisibilityCanBePrivate")
 class MainActivity : AppCompatActivity() {
