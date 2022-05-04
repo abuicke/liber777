@@ -19,6 +19,7 @@ import com.gravitycode.sevensevenseven.util.toastLong
  * TODO: Add option to write JSON to local disk and read [Liber777] from there so the user can edit it.
  * TODO: Add path name to [ColumnScreen] labels
  * TODO: Fix Arabic charachters
+ * TODO: Fix Greek charachters
  * */
 @Suppress("MemberVisibilityCanBePrivate")
 class MainActivity : AppCompatActivity() {
