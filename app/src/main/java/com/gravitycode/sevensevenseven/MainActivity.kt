@@ -18,7 +18,6 @@ import com.gravitycode.sevensevenseven.util.toastLong
  * TODO: Fix Arabic characters
  * TODO: Fix Greek characters
  * TODO: Search button should appear above soft keyboard when typing search
- * TODO: Verify how elements appear on screen when screen is very small
  * */
 @Suppress("MemberVisibilityCanBePrivate")
 class MainActivity : AppCompatActivity() {
