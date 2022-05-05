@@ -64,7 +64,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         setContentView(homeScreen.contentView)
-        supportActionBar!!.title = getString(R.string.app_name)
     }
 
     fun displayRow(@IntRange(from = 0, to = Liber777.MAX_ROWS) index: Int) {
@@ -72,7 +71,6 @@ class MainActivity : AppCompatActivity() {
         val row = liber777.getRow(index)
         rowScreen.setRow(row)
         setContentView(rowScreen)
-        supportActionBar!!.title = row.getString(1)
     }
 
     fun displayColumn(@IntRange(from = 0, to = Liber777.MAX_COLUMNS) index: Int) {
@@ -80,7 +78,6 @@ class MainActivity : AppCompatActivity() {
         val col = liber777.getColumn(index)
         columnScreen.setColumn(col)
         setContentView(columnScreen)
-        supportActionBar!!.title = Liber777.COLUMN_NAMES[index]
     }
 
     private fun displaySearchResults(searchResults: List<Liber777.Item>) {
