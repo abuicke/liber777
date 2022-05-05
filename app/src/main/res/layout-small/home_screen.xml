@@ -11,25 +11,13 @@
         android:id="@+id/txt_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/aclonica"
         android:text="@string/_777"
-        android:textSize="80sp"
+        android:textSize="50sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txt_subtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/akaya_telivigala"
-        android:gravity="center"
-        android:text="@string/app_subtitle"
-        android:textSize="22sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_title" />
 
     <Spinner
         android:id="@+id/dropdown_rows"
@@ -41,7 +29,7 @@
         android:entries="@array/rows"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_subtitle" />
+        app:layout_constraintTop_toBottomOf="@id/txt_title" />
 
     <Spinner
         android:id="@+id/dropdown_columns"

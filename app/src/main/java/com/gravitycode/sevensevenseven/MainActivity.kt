@@ -23,11 +23,11 @@ import com.gravitycode.sevensevenseven.util.toastLong
 @Suppress("MemberVisibilityCanBePrivate")
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var homeScreen: HomeScreen
-    private lateinit var rowScreen: RowScreen
-    private lateinit var columnScreen: ColumnScreen
+    lateinit var homeScreen: HomeScreen
+    lateinit var rowScreen: RowScreen
+    lateinit var columnScreen: ColumnScreen
 
-    private lateinit var liber777: Liber777
+    lateinit var liber777: Liber777
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
