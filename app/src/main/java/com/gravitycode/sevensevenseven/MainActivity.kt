@@ -4,21 +4,21 @@ import android.app.AlertDialog
 import android.os.Bundle
 import androidx.annotation.IntRange
 import androidx.appcompat.app.AppCompatActivity
-import com.google.common.base.Preconditions
 import com.gravitycode.sevensevenseven.ui.ColumnScreen
 import com.gravitycode.sevensevenseven.ui.HomeScreen
 import com.gravitycode.sevensevenseven.ui.RowScreen
 import com.gravitycode.sevensevenseven.ui.Screen
+import com.gravitycode.sevensevenseven.util.Preconditions
 import com.gravitycode.sevensevenseven.util.toastLong
 
 /**
- * TODO: Getting `Cannot fit requested classes in a single dex file (# methods: 65696 > 65536)`
- * when building for API 16 device
  * TODO: Landscape changed is broken
  * TODO: Add option to write JSON to local disk and read [Liber777] from there so the user can edit it.
  * TODO: Add path name to [ColumnScreen] labels
  * TODO: Fix Arabic characters
  * TODO: Fix Greek characters
+ * TODO: Search button should appear above soft keyboard when typing search
+ * TODO: Verify how elements appear on screen when screen is very small
  * */
 @Suppress("MemberVisibilityCanBePrivate")
 class MainActivity : AppCompatActivity() {

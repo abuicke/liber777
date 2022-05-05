@@ -2,7 +2,7 @@ package com.gravitycode.sevensevenseven
 
 import android.content.Context
 import androidx.annotation.IntRange
-import com.google.common.base.Preconditions
+import com.gravitycode.sevensevenseven.util.Preconditions
 import org.json.JSONArray
 import java.io.InputStream
 
