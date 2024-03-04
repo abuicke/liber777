@@ -1,12 +1,3 @@
 <resources>
-    <string name="app_name">777</string>
-    <string name="_777">777</string>
-    <string name="app_subtitle">Prolegomena Symbolica Ad Systemam Sceptico-Mysticæ Viæ Explicandæ, Fundamentum Hieroglyphicum Sanctissimorum Scientiæ Summæ</string>
-    <string name="search">Search</string>
-    <string name="label_key">Key</string>
-    <string name="label_hebrew_names">Hebrew Names of Numbers and Letters</string>
-    <string name="label_english_of_col_II">English of Col II</string>
-    <string name="label_consciousness_of_the_adept">Consciousness of the Adept</string>
-    <string name="label_god_names_in_assiah">God-Names in Assiah</string>
-    <string name="label_the_heavens_of_assiah">The Heavens of Assiah</string>
+    <string name="app_name">liber777</string>
 </resources>
