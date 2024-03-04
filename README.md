@@ -1,4 +1,4 @@
-# liber_777
+# Liber 777
 
 Liber 777 for Android and iOS
 
